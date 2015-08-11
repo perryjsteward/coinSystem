@@ -1,8 +1,3 @@
-<?php
-$path_parts = pathinfo($_SERVER['PHP_SELF']);
-$page = $path_parts['filename'];
-
-?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -26,11 +21,6 @@ $page = $path_parts['filename'];
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<style>
-		html {
-			overflow-y: scroll; 
-		}
-	</style>
   </head>
   
  <body>
@@ -51,15 +41,15 @@ $page = $path_parts['filename'];
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li <?php if($page == 'index'){echo 'class="active"'; }?>><a href="index.php">Home</a></li>
-                <li <?php if($page == 'about'){echo 'class="active"'; }?>><a href="about.php">About the Values</a></li>
-                <li <?php if($page == 'story'){echo 'class="active"'; }?>><a href="story.php">Story Submissions</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About the Values</a></li>
+                <li><a href="story.php">Story Submissions</a></li>
                </ul>
                 </li>
               </ul>
 			  <ul class="nav navbar-nav navbar-right">
-				
-				<li <?php if($page == 'account'){echo 'class="dropdown active"'; } else { echo 'dropdown';}?>>
+			  
+				<li class="dropdown active">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 				  <span class="badge">4</span>&nbsp;
 				 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
@@ -82,3 +72,65 @@ $page = $path_parts['filename'];
       </div>
     </div>
 	<!--./ end navigation -->
+	
+	
+
+		
+	<!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing"  style="margin-top:75px;">
+	
+		<ul class="nav nav-tabs" style="margin-top:25px;">
+			<li role="presentation" class="active"><a href="#">Notifications <span class="badge">4</span>&nbsp;</a></li>
+			<li role="presentation"><a href="#">Submissions</a></li>
+			<li role="presentation"><a href="#">Nominated</a></li>
+			<li role="presentation"><a href="#">Reviewed</a></li>
+			<li role="presentation"><a href="#">Account</a></li>
+		</ul>
+		
+		<table class="table table-hover" style="margin-top:40px;">
+			<tbody>
+			  <tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>john@example.com</td>
+			  </tr>
+			  <tr>
+				<td>Mary</td>
+				<td>Moe</td>
+				<td>mary@example.com</td>
+			  </tr>
+			  <tr>
+				<td>July</td>
+				<td>Dooley</td>
+				<td>july@example.com</td>
+			  </tr>
+			</tbody>
+		  </table>
+     
+	  
+		<hr class="featurette-divider"> 
+		
+
+	</div><!--./ container -->	
+	
+	<!-- FOOTER -->
+	<footer class="footer">
+      <div class="container">
+		<br />
+        <p class="pull-right"><a href="#">Back to top</a></p>
+		<p>&copy; 2015 General Electric. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </div>
+    </footer>
+	
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+  
+    
+  </body>
+</html>
