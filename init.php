@@ -6,7 +6,7 @@ session_start(); //starts a session on acccess to site
 
 //config sets all global links and navigation constants, removes repetition later
 $urls = array (
-	'root_path' => $_SERVER['DOCUMENT_ROOT']."itlp", //rootpath is www within wamp so set as project name
+	'root_path' => $_SERVER['DOCUMENT_ROOT']."coinSystem", //rootpath is www within wamp so set as project name
 	"root" => "http://localhost/coinSystem",
 	'public' => '/public', //used for href, POST actions
 	'application' => '/application',
