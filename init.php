@@ -22,4 +22,7 @@ defined("ROOT_PATH")
 defined("TEMPLATES_PATH")
     or define("TEMPLATES_PATH", $urls['root_path'] . $urls['res'] . '/templates');//issue with using root path, real path used to circumvent 
 
+defined("MODEL_PATH")
+    or define("MODEL_PATH", $urls['root_path'] . $urls['application'] . '/models');//issue with using root path, real path used to circumvent 
+
 ?>

@@ -70,7 +70,7 @@ $page = $path_parts['filename'];
 					<li role="separator" class="divider"></li>
 					<li><a href="#">Account</a></li>
 					<li><a href="#">Submissions</a></li>
-					<li><a href="#">Nominations</a></li>
+					<li><a href="#">Received</a></li>
 					<li><a href="#">Reviews</a></li>
 				  </ul>
 				</li>

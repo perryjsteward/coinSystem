@@ -1,6 +1,10 @@
 <?php
 include('init.php');
 require_once(TEMPLATES_PATH.'/header.php');
+
+if($page == 'story'){
+	
+}
 ?>
 
 		
