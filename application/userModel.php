@@ -6,8 +6,8 @@
 		private $db;
 
 		public function __construct() {
-			$db = new Database();
-			$db->connect();
+			$this->db = new Database();
+			$this->db->connect();
 		}
 
 		public function getUserList() {
