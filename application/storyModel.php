@@ -84,6 +84,17 @@
 			}
 		}
 
+		// denies a story
+		public function setDenied($storyID) {
+			$result = $this->db->query("UPDATE story SET Status='denied' WHERE StoryID = " . $storyID . "");
+			//echo count()
+			if(count($result['result']) == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
 		// creates a story in the DB
 		public function createStory($subSSO, $targetSSO, $story, $subDate, $value1, $value2, $value3) {
 			$result = $this->db->query("INSERT INTO story (SubSSO, TargetSSO, Story, SubDate, Value_1, Value_2, Value_3) VALUES('" . $subSSO . 
@@ -94,6 +105,46 @@
 			} else {
 				return false;
 			}
+		}
+
+		// votes yes on a story
+		public function voteYes($storyID, $sso) {
+			$this->vote($storyID, $sso, 1);
+		}
+
+		// votes yes on a story
+		public function voteNo($storyID, $sso) {
+			$this->vote($storyID, $sso, 0);
+		}
+
+		// creates a vote for a reviewer on a story
+		// vote is binary, 1 for yes, 0 for no
+		public function vote($storyID, $sso, $vote) {
+			$result = $this->db->query("INSERT INTO vote VALUES(" . $storyID . 
+				",'" . $sso . "'," . $vote . ")");
+			//echo count()
+			if(count($result['result']) == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		//returns a two element array with the first element being number of yes votes, and second element being total votes
+		public function getVotes($storyID) {
+			$result = $this->db->query("select * FROM vote WHERE StoryID = " . $storyID . "");
+			$votes = mysqli_fetch_all($result['result']);
+
+			$totalVotes = 0;
+			$yesVotes = 0;
+			foreach($votes as $vote) {
+				$totalVotes++;
+				if($vote[2] == 1) {
+					$yesVotes++;
+				}
+			}
+			$voteList = array($yesVotes, $totalVotes);
+			return $voteList;
 		}
 	}
 ?>
