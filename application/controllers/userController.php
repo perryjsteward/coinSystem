@@ -1,5 +1,6 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/coinSystem/init.php');
+include(MODELS . "/userModel.php");
 //include_once(MODELS . "/model.php");
 /*
 	user Controller handles the biz logic and invokes user models to obtain user objects to return to the presentation layer
@@ -10,7 +11,7 @@ class userController {
 	
 	//constructor initiates a new model object
 	public function __constructor(){
-		$this->model = new Model();
+		$this->model = new userModel();
 	}
 	
 	//invoke method for calling model class and obtaining user arrays
@@ -35,8 +36,26 @@ class userController {
 			
 	} //end invoke
 	
+	private function login($SSO, $Password){
+		$User = $this->model->getUser($SSO);
+		
+		if($Password == User->getPassword){
+			Return true; 
+		}else{
+			Return false;
+		}	
+	}
 	
 	
+	private function username($SSO){
+		$User = $this->model->getUser($SSO);
+		
+		$Username = User->getFName.User->LName;
+
+	}
+	
+		
+	}
 }
 
 ?>
