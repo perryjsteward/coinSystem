@@ -23,14 +23,100 @@
 		}
 		
 		public function getUser($SSO) {
-			$db = new Database();
-			$db->connect();
-			$result = $db->query('select * FROM story');
-			$story = mysqli_fetch_all($result['result']);
+			//$db = new Database();
+			//$db->connect();
+			$result = $this->db->query("select * FROM personal WHERE SSO = " . $SSO . "");
+			$users = mysqli_fetch_all($result['result']);
+			$user = $users[0];
 			
-			$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9]); 
+			$userObj = new user($user[0], $user[1], $user[2], $user[3], $user[4], $user[5], $user[6], $user[7], $user[8], $user[9]); 
 				
-			return $storyObj;
+			return $userObj;
 		}
+		
+		public function setUserCountry($SSO, $Country ) {
+			$result = $this->db->query("UPDATE personal SET Country='" . $Country . "' WHERE SSO = " . $SSO . "");
+			if($result == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public function setUserBusiness($SSO, $Business ) {
+			$result = $this->db->query("UPDATE personal SET Business='" . $Business . "' WHERE SSO = " . $SSO . "");
+			if($result == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}	
+			
+		public function setUserEmail($SSO, $Email ) {
+			$result = $this->db->query("UPDATE personal SET Email='" . $Email . "' WHERE SSO = " . $SSO . "");
+			if($result == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}	
+		
+		
+		public function setUserRoleOrRoatation($SSO, $RoleOrRotation ) {
+			$result = $this->db->query("UPDATE personal SET RoileOrRoatation='" . $RoleOrRotation . "' WHERE SSO# = " . $SSO . "");
+			if($result == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public function setUserRoleOrRoatation($SSO, $RoleOrRotation ) {
+			$result = $this->db->query("UPDATE personal SET Country='" . $RoleOrRotation . "' WHERE SSO# = " . $SSO . "");
+			if($result == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public function setUserRoleOrRoatation($SSO, $RoleOrRotation ) {
+			$result = $this->db->query("UPDATE personal SET Country='" . $RoleOrRotation . "' WHERE SSO# = " . $SSO . "");
+			if($result == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public function setUserRoleOrRoatation($SSO, $Permissions ) {
+			$result = $this->db->query("UPDATE personal SET Permissions='" . $Permissions . "' WHERE SSO# = " . $SSO . "");
+			if($result == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public function setUserRoleOrRoatation($SSO, $Admin ) {
+			$result = $this->db->query("UPDATE personal SET Admin='" . $Admin . "' WHERE SSO# = " . $SSO . "");
+			if($result == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public function setUserRoleOrRoatation($SSO, $Password ) {
+			$result = $this->db->query("UPDATE personal SET Password='" . $Password . "' WHERE SSO# = " . $SSO . "");
+			if($result == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+			
+		
+	
 	}
 ?>

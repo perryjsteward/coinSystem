@@ -30,9 +30,7 @@ foreach($array as $rec) {
 }
 //var_dump($array);*/
 
-include('init.php');
-//include(ROOT_PATH . '/application/storyModel.php');
-include(ROOT_PATH . '/application/userModel.php');
+
 
 //$sModel = new StoryModel();
 //$rec = $sModel->getStoryByID(1);
@@ -60,8 +58,8 @@ foreach($sList as $rec) {*/
 	echo $rec->getValue3();
 	echo "<br/>";*/
 //}
-
-$uModel = new userModel();
+// User List Test
+/*$uModel = new userModel();
 $uList = $uModel->getUserList();
 foreach($uList as $rec) {
 		echo " ";
@@ -84,7 +82,32 @@ foreach($uList as $rec) {
 	echo $rec->getAdmin();
 	echo " ";
 	echo $rec->getPassword();
+	echo "<br/>";*/
+	
+include('init.php');
+include(ROOT_PATH . '/application/userModel.php');
+$uModel = new userModel();
+$rec = $uModel->getUser(212411640);
+	echo $rec->getSSO();
+	echo " ";
+	echo $rec->getLName();
+	echo " ";
+	echo $rec->getFName();
+	echo " ";
+	echo $rec->getCountry();
+	echo " ";
+	echo $rec->getBusiness();
+	echo " ";
+	echo $rec->getEmail();
+	echo " ";
+	echo $rec->getRoleOrRotation();
+	echo " ";
+	echo $rec->getPermissions();
+	echo " ";
+	echo $rec->getAdmin();
+	echo " ";
+	echo $rec->getPassword();
 	echo "<br/>";
-}
+//}
 	
 ?>
