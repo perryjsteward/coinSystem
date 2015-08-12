@@ -13,10 +13,10 @@ class Database {
 	private $conn;
 	public function __construct(){
 		//set db variables
-		$this->host = HOST;
-		$this->username = USERNAME;
-		$this->password = PASSWORD;
-		$this->dbname = DATABASE;
+		$this->host = "localhost";
+		$this->username = "root";
+		$this->password = "";
+		$this->dbname = "itlpcoin";
 	}//end constructor
 	//funtion allows a conection to the database on the given db variables from config.
 	public function connect(){
