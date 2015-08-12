@@ -10,8 +10,11 @@
 		private $value1;
 		private $value2;
 		private $value3;
+		private $title;
+		private $targetName;
+		private $subName;
 
-		public function __construct($storyID, $subSSO, $targetSSO, $story, $subDate, $apvDate, $status, $value1, $value2, $value3){
+		public function __construct($storyID, $subSSO, $targetSSO, $story, $subDate, $apvDate, $status, $value1, $value2, $value3, $title, $targetName, $subName){
 			$this->storyID = $storyID;
 			$this->subSSO = $subSSO;
 			$this->targetSSO = $targetSSO;
@@ -22,6 +25,9 @@
 			$this->value1 = $value1;
 			$this->value2 = $value2;
 			$this->value3 = $value3;
+			$this->title = $title;
+			$this->targetName = $targetName;
+			$this->subName = $subName;
 		}
 
 		public function getStoryID() {
@@ -54,6 +60,15 @@
 		}
 		public function getValue3() {
 			return $this->value3;
+		}
+		public function getTitle() {
+			return $this->title;
+		}
+		public function getTargetName() {
+			return $this->targetName;
+		}
+		public function getSubName() {
+			return $this->subName;
 		}
 	}//end constructor
 ?>

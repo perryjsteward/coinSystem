@@ -1,5 +1,5 @@
 <?php
-	include(MODELS . '/story.php');
+	include(ROOT_PATH . '/application/models/story.php');
 	include(ROOT_PATH . '/application/services/database.php');
 
 	class StoryModel {
@@ -11,7 +11,6 @@
 		}
 
 		// returns an array of story objects
-	
 		public function getStoryList() {
 			//$db = new Database();
 			//$db->connect();
@@ -21,12 +20,24 @@
 
 			$storyList = array();
 			foreach($stories as $story) {
-				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9]); 
+				$resultUsers = $this->db->query("select * FROM personal WHERE SSO = '" . $story[1] . "'");
+				$users = mysqli_fetch_all($resultUsers['result']);
+				$user = $users[0];
+				$sName = $user[2] . $user[1];
+
+				$resultUsers = $this->db->query("select * FROM personal WHERE SSO = '" . $story[2] . "'");
+				$users = mysqli_fetch_all($resultUsers['result']);
+				$user = $users[0];
+				$tName = $user[2] . $user[1];
+
+				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9], 
+					$story[10], $tName, $sName); 
 				array_push($storyList, $storyObj);
 			}
 			return $storyList;
 		}
 
+		// returns an array of Story objects
 		public function getStoriesBySubSSO($subSSO) {
 			$result = $this->db->query("select * FROM story WHERE SubSSO = '" . $subSSO . "'");
 			$stories = mysqli_fetch_all($result['result']);
