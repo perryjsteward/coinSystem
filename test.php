@@ -1,5 +1,5 @@
 <?php
-include('init.php');
+/*include('init.php');
 include(ROOT_PATH . '/application/services/database.php');
 
 $db = new Database();
@@ -28,6 +28,35 @@ foreach($array as $rec) {
 	echo $rec[8];
 	echo "<br/>";
 }
-//var_dump($array);
+//var_dump($array);*/
 
+include('init.php');
+include(ROOT_PATH . '/application/storyModel.php');
+
+$sModel = new StoryModel();
+$rec = $sModel->getStoryByID(1);
+/*
+$sList = $sModel->getStoryList();
+foreach($sList as $rec) {*/
+	echo $rec->getStoryID();
+	echo " ";
+	echo $rec->getSubSSO();
+	echo " ";
+	echo $rec->getTargetSSO();
+	echo " ";
+	echo $rec->getStory();
+	echo " ";
+	echo $rec->getSubDate();
+	echo " ";
+	echo $rec->getApvDate();
+	echo " ";
+	echo $rec->getStatus();
+	echo " ";
+	echo $rec->getValue1();
+	echo " ";
+	echo $rec->getValue2();
+	echo " ";
+	echo $rec->getValue3();
+	echo "<br/>";
+//}
 ?>
