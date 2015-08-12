@@ -1,5 +1,5 @@
 <?php
-	include(ROOT_PATH . '/application/story.php');
+	include(MODELS . '/story.php');
 	include(ROOT_PATH . '/application/services/database.php');
 
 	class StoryModel {
@@ -11,6 +11,7 @@
 		}
 
 		// returns an array of story objects
+	
 		public function getStoryList() {
 			//$db = new Database();
 			//$db->connect();
