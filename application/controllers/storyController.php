@@ -34,8 +34,46 @@ class StoryController {
 			
 	} //end invoke
 	
-	
-	
-}
+	private function tallyVotes($storyID) {
+		$votes = $this->model->getVotes($storyID);
+		$nos = $votes[1] - $votes[0];
 
-?>
+		if($votes[0] >= 4) {
+			return "approved";
+		} else if ($nos >= 4) {
+			return "denied";
+		} else {
+			return "pending";
+		}
+	}
+	
+	private function tallyVotesOnDead($storyID) {
+		$votes = $this->model->getVotes($storyID);
+		$nos = $votes[1] - $votes[0];
+
+		if($votes[0] >= $nos) {
+			return "approved";
+		} else {
+			return "denied";
+		}
+	}
+
+	private function voteYes($storyID, $SSO) {
+		$this->$model->voteYes($storyID, $SSO);
+		$this->tallyVotes($storyID);
+	}
+
+	private function voteNo($storyID, $SSO) {
+		$this->$model->voteNo($storyID, $SSO);
+		$this->tallyVotes($storyID);
+	}
+
+	private function allowedToVote($storyID, $SSO) {
+		$story = $this->model->getStoryByID($storyID);
+		if ($SSO == $story->getSubSSO) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+}
