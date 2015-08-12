@@ -23,8 +23,6 @@
 		}
 		// select a specific user based on there SSO
 		public function getUser($SSO) {
-			//$db = new Database();
-			//$db->connect();
 			$result = $this->db->query("select * FROM personal WHERE SSO = " . $SSO . "");
 			$users = mysqli_fetch_all($result['result']);
 			$user = $users[0];

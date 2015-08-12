@@ -59,10 +59,12 @@ foreach($sList as $rec) {*/
 	echo "<br/>";*/
 //}
 // User List Test
-/*$uModel = new userModel();
-$uList = $uModel->getUserList();
-foreach($uList as $rec) {
-		echo " ";
+include('init.php');
+include(ROOT_PATH . '/application/userModel.php');
+$uModel = new userModel();
+$rec = $uModel->getUser(212411640);
+//foreach($uList as $rec) {
+		//echo " ";
 	echo $rec->getSSO();
 	echo " ";
 	echo $rec->getLName();
@@ -82,39 +84,17 @@ foreach($uList as $rec) {
 	echo $rec->getAdmin();
 	echo " ";
 	echo $rec->getPassword();
-	echo "<br/>";*/
-	
-include('init.php');
-include(ROOT_PATH . '/application/userModel.php');
-$uModel = new userModel();
-$uModel->createUser("111001078","Smith","Joe","USA","Lighting","Joe.Smith@ge.com", "1st","1","0","password");
+	echo "<br/>";
+//}
+
+//$uModel->createUser("111001078","Smith","Joe","USA","Lighting","Joe.Smith@ge.com", "1st","1","0","password");
 /*if($success) {
 	echo "Status Update Successful";
 } else {
 	echo "Status Update Failed";
 }*/
 
-/*$rec = $uModel->getLastName(212411640);
-	echo $rec->getSSO();
-	echo " ";
-	echo $rec->getLName();
-	echo " ";
-	echo $rec->getFName();
-	echo " ";
-	echo $rec->getCountry();
-	echo " ";
-	echo $rec->getBusiness();
-	echo " ";
-	echo $rec->getEmail();
-	echo " ";
-	echo $rec->getRoleOrRotation();
-	echo " ";
-	echo $rec->getPermissions();
-	echo " ";
-	echo $rec->getAdmin();
-	echo " ";
-	echo $rec->getPassword();
-	echo "<br/>";*/
+
 //}
 	
 ?>
