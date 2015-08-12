@@ -49,8 +49,20 @@
 
 		public function setStatus($storyID, $status) {
 			$result = $this->db->query("UPDATE story SET Status='" . $status . "' WHERE StoryID = " . $storyID . "");
-			//echo $result;
-			if($result == 1) {
+			//echo count()
+			if(count($result['result']) == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		// creates a story in the DB
+		public function createStory($subSSO, $targetSSO, $story, $subDate, $value1, $value2, $value3) {
+			$result = $this->db->query("INSERT INTO story (SubSSO, TargetSSO, Story, SubDate, Value_1, Value_2, Value_3) VALUES('" . $subSSO . 
+				"','" . $targetSSO . "','" . $story . "','". $subDate . "','". $value1 . "','". $value2 . "','". $value3 . "')");
+			//echo count()
+			if(count($result['result']) == 1) {
 				return true;
 			} else {
 				return false;

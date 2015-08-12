@@ -35,14 +35,16 @@ include(ROOT_PATH . '/application/storyModel.php');
 //include(ROOT_PATH . '/application/userModel.php');
 
 $sModel = new StoryModel();
-$sModel->setApvDate(1, "08/12/2015");
-$success = $sModel->setStatus(1, "Approved");
-if($success) {
+//$sModel->setApvDate(1, "08/12/2015");
+$sModel->createStory("212414600", "200020088", "A gift to my plus 1", "08/13/2015", "Integrity", "Passion", "Humility");
+//$success = $sModel->setStatus(1, "Approved");
+/*if($success) {
 	echo "Status Update Successful";
 } else {
 	echo "Status Update Failed";
-}
-$rec = $sModel->getStoryByID(1);
+}*/
+echo "<br/>";
+$rec = $sModel->getStoryByID(3);
 /*
 $sList = $sModel->getStoryList();
 foreach($sList as $rec) {*/
