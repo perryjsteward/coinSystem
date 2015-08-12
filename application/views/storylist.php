@@ -1,3 +1,12 @@
+
+<!-- Page Header describes the page to user -->
+<div class="page-header">
+	<h1>The ITLP Stories
+	<a class="btn btn-success btn-lg pull-right" href="#integrity" role="button">Submit Story</a>
+	</h1>
+</div>
+<p class="lead">Below are all the stories behind the ITLP coin awards. Discover which ITLP's achieved and displayed the ITLP values. Cras sit amet nibh libero, in gravida nulla</p>
+
 <table class="table table-hover" style="margin-top: 50px; margin-bottom: -50px;">	
 			<tbody>
 				<tr>
@@ -10,7 +19,7 @@
 					</td>
 					<td>
 						<div class="media-body">
-							<h4 class="media-heading"><a href="#">Media heading</a></h4>
+							<h4 class="media-heading"><a href="story.php?story=single">Media heading</a></h4>
 							Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
 						</div>
 					</td>
@@ -25,7 +34,7 @@
 					</td>
 					<td>
 						<div class="media-body">
-							<h4 class="media-heading"><a href="#">Media heading</a></h4>
+							<h4 class="media-heading"><a href="story.php?story=single">Media heading</a></h4>
 							Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
 						</div>
 					</td>
@@ -40,7 +49,7 @@
 					</td>
 					<td>
 						<div class="media-body">
-							<h4 class="media-heading"><a href="#">Media heading</a></h4>
+							<h4 class="media-heading"><a href="story.php?story=single">Media heading</a></h4>
 							Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
 						</div>
 					</td>

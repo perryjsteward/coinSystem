@@ -15,7 +15,6 @@ class StoryController {
 	
 	//invoke method for calling model class and obtaining story arrays
 	public function invoke(){	
-	
 		//if statement to handle http request for STORY
 		if(isset($_GET['story'])){
 			switch($_GET['story']){ //switch on story value
@@ -24,7 +23,7 @@ class StoryController {
 					include(VIEWS . '/storylist.php');
 					break;
 				case 'single'://show specific requested story object
-					$story = $this->model->getStory($_GET['book']);
+					//$story = $this->model->getStory($_GET['book']);
 					include(VIEWS . '/storyview.php');
 			}//end switch
 		} //end if story
