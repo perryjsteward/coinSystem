@@ -31,14 +31,15 @@ foreach($array as $rec) {
 //var_dump($array);*/
 
 include('init.php');
-include(ROOT_PATH . '/application/storyModel.php');
+//include(ROOT_PATH . '/application/storyModel.php');
+include(ROOT_PATH . '/application/userModel.php');
 
-$sModel = new StoryModel();
-$rec = $sModel->getStoryByID(1);
+//$sModel = new StoryModel();
+//$rec = $sModel->getStoryByID(1);
 /*
 $sList = $sModel->getStoryList();
 foreach($sList as $rec) {*/
-	echo $rec->getStoryID();
+/*echo $rec->getStoryID();
 	echo " ";
 	echo $rec->getSubSSO();
 	echo " ";
@@ -57,6 +58,33 @@ foreach($sList as $rec) {*/
 	echo $rec->getValue2();
 	echo " ";
 	echo $rec->getValue3();
-	echo "<br/>";
+	echo "<br/>";*/
 //}
+
+$uModel = new userModel();
+$uList = $uModel->getUserList();
+foreach($uList as $rec) {
+		echo " ";
+	echo $rec->getSSO();
+	echo " ";
+	echo $rec->getLName();
+	echo " ";
+	echo $rec->getFName();
+	echo " ";
+	echo $rec->getCountry();
+	echo " ";
+	echo $rec->getBusiness();
+	echo " ";
+	echo $rec->getEmail();
+	echo " ";
+	echo $rec->getRoleOrRotation();
+	echo " ";
+	echo $rec->getPermissions();
+	echo " ";
+	echo $rec->getAdmin();
+	echo " ";
+	echo $rec->getPassword();
+	echo "<br/>";
+}
+	
 ?>
