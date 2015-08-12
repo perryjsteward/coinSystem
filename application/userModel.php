@@ -21,5 +21,16 @@
 			}
 			return $userList;
 		}
+		
+		public function getUser($SSO) {
+			$db = new Database();
+			$db->connect();
+			$result = $db->query('select * FROM story');
+			$story = mysqli_fetch_all($result['result']);
+			
+			$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9]); 
+				
+			return $storyObj;
+		}
 	}
 ?>
