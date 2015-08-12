@@ -36,18 +36,18 @@ include(ROOT_PATH . '/application/storyModel.php');
 
 $sModel = new StoryModel();
 //$sModel->setApvDate(1, "08/12/2015");
-$sModel->createStory("212414600", "200020088", "A gift to my plus 1", "08/13/2015", "Integrity", "Passion", "Humility");
+//$sModel->createStory("212414600", "200020088", "A gift to my plus 1", "08/13/2015", "Integrity", "Passion", "Humility");
 //$success = $sModel->setStatus(1, "Approved");
 /*if($success) {
 	echo "Status Update Successful";
 } else {
 	echo "Status Update Failed";
-}*/
-echo "<br/>";
-$rec = $sModel->getStoryByID(3);
-/*
-$sList = $sModel->getStoryList();
-foreach($sList as $rec) {*/
+}
+echo "<br/>";*/
+//$rec = $sModel->getStoryByID(3);
+
+$sList = $sModel->getStoriesByTargetSSO("212411640");
+foreach($sList as $rec) {
 echo $rec->getStoryID();
 	echo " ";
 	echo $rec->getSubSSO();
@@ -68,7 +68,7 @@ echo $rec->getStoryID();
 	echo " ";
 	echo $rec->getValue3();
 	echo "<br/>";
-//}
+}
 
 	
 ?>

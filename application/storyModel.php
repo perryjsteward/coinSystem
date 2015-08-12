@@ -10,6 +10,7 @@
 			$this->db->connect();
 		}
 
+		// returns an array of story objects
 		public function getStoryList() {
 			//$db = new Database();
 			//$db->connect();
@@ -25,6 +26,31 @@
 			return $storyList;
 		}
 
+		public function getStoriesBySubSSO($subSSO) {
+			$result = $this->db->query("select * FROM story WHERE SubSSO = '" . $subSSO . "'");
+			$stories = mysqli_fetch_all($result['result']);
+
+			$storyList = array();
+			foreach($stories as $story) {
+				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9]); 
+				array_push($storyList, $storyObj);
+			}
+			return $storyList;
+		}
+
+		public function getStoriesByTargetSSO($targetSSO) {
+			$result = $this->db->query("select * FROM story WHERE TargetSSO = '" . $targetSSO . "'");
+			$stories = mysqli_fetch_all($result['result']);
+
+			$storyList = array();
+			foreach($stories as $story) {
+				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9]); 
+				array_push($storyList, $storyObj);
+			}
+			return $storyList;
+		}
+
+		// returns a story object that correpsonds to that ID
 		public function getStoryByID($storyID) {
 			//$db = new Database();
 			//$db->connect();
@@ -47,8 +73,9 @@
 			}
 		}
 
-		public function setStatus($storyID, $status) {
-			$result = $this->db->query("UPDATE story SET Status='" . $status . "' WHERE StoryID = " . $storyID . "");
+		// approves a story
+		public function setApproved($storyID) {
+			$result = $this->db->query("UPDATE story SET Status='approved' WHERE StoryID = " . $storyID . "");
 			//echo count()
 			if(count($result['result']) == 1) {
 				return true;
