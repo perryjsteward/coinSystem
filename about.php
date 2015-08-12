@@ -20,29 +20,29 @@ require_once(TEMPLATES_PATH.'/header.php');
       <!-- Three columns of text below the carousel -->
       <div class="row" style="margin-top: 50px">
         <div class="col-lg-2">
-          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="130" height="130">
           <p style="margin-top: 25px;"><a class="btn btn-default btn-lg center-block" href="#integrity" role="button">Integrity</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2">
-          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="130" height="130">
           <p style="margin-top: 25px;"><a class="btn btn-primary btn-lg center-block" href="#humility" role="button">Humility</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2">
-          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="130" height="130">
           <p style="margin-top: 25px;"><a class="btn btn-success btn-lg center-block" href="#educator" role="button">Educator</a></p>
         </div><!-- /.col-lg-4 -->
       
         <div class="col-lg-2">
-          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="130" height="130">
           <p style="margin-top: 25px;"><a class="btn btn-info btn-lg center-block" href="#passion" role="button">Passion</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2">
-          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="130" height="130">
           <p style="margin-top: 25px;"><a class="btn btn-warning btn-lg center-block" href="#steward" role="button">Steward</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2">
-          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <p style="margin-top: 25px;"><a class="btn btn-danger btn-lg center-block" href="#customer" role="button">Customer Focus</a></p>
+          <img class="img-circle center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="130" height="130">
+          <p style="margin-top: 25px;"><a class="btn btn-danger btn-lg center-block" href="#customer" role="button">Customer</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 	  

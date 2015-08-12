@@ -20,11 +20,11 @@ defined("TEMPLATES_PATH")
     or define("TEMPLATES_PATH", $urls['root_path'] . $urls['res'] . '/templates');//sets template path within file directory
 
 defined("SCRIPTS")
-    or define("SCRIPTS", $urls['root'] . $urls['application'] . '/scripts');//sets scripts
+    or define("SCRIPTS", $urls['root_path'] . $urls['application'] . '/scripts');//sets scripts
 
 //MVC pattern constants
 defined("MODELS")
-    or define("MODELS", $urls['root'] . $urls['application'] . '/models');//sets models
+    or define("MODELS", $urls['root_path'] . $urls['application'] . '/models');//sets models
 		
 defined("VIEWS")
     or define("VIEWS", $urls['root_path'] . $urls['application'] . '/views');//sets views
