@@ -87,7 +87,14 @@ foreach($uList as $rec) {
 include('init.php');
 include(ROOT_PATH . '/application/userModel.php');
 $uModel = new userModel();
-$rec = $uModel->getUser(212411640);
+$uModel->createUser("111001078","Smith","Joe","USA","Lighting","Joe.Smith@ge.com", "1st","1","0","password");
+/*if($success) {
+	echo "Status Update Successful";
+} else {
+	echo "Status Update Failed";
+}*/
+
+/*$rec = $uModel->getLastName(212411640);
 	echo $rec->getSSO();
 	echo " ";
 	echo $rec->getLName();
@@ -107,7 +114,7 @@ $rec = $uModel->getUser(212411640);
 	echo $rec->getAdmin();
 	echo " ";
 	echo $rec->getPassword();
-	echo "<br/>";
+	echo "<br/>";*/
 //}
 	
 ?>

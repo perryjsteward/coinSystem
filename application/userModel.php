@@ -33,6 +33,7 @@
 				
 			return $userObj;
 		}
+		
 		// update the users country
 		public function setUserCountry($SSO, $Country ) {
 			$result = $this->db->query("UPDATE personal SET Country='" . $Country . "' WHERE SSO = " . $SSO . "");
