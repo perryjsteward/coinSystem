@@ -100,11 +100,20 @@
 		}
 		
 		// create a new user
-		public function createUSer($SSO, $LName, $FName, $Country, $Business, $Email, $RoleOrRotation, $Permissions, $Admin, $Password) {
+		public function createUser($SSO, $LName, $FName, $Country, $Business, $Email, $RoleOrRotation, $Permissions, $Admin, $Password) {
 			$result = $this->db->query("INSERT INTO personal (SSO, LName, FName, Country, Business, Email, RoleOrRotation, Permissions, Admin, Password) VALUES('" . $SSO . 
 				"','" . $LName . "','" . $FName . "','". $Country . "','". $Business . "','". $Email . "','". $RoleOrRotation . "','". $Permissions . " ','" . $Admin . "','" . $Password . "')");
 			//echo count()
 			if(count($result['result']) == 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public function deleteUser($SSO){
+			$result = $this->db->query("Delete From personal Where SSO = " . $SSO . "");
+			if($result == 1) {
 				return true;
 			} else {
 				return false;

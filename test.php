@@ -62,10 +62,10 @@ foreach($sList as $rec) {*/
 include('init.php');
 include(ROOT_PATH . '/application/userModel.php');
 $uModel = new userModel();
-$rec = $uModel->getUser(212411640);
+$rec = $uModel->deleteUser(111001078);
 //foreach($uList as $rec) {
 		//echo " ";
-	echo $rec->getSSO();
+	/*echo $rec->getSSO();
 	echo " ";
 	echo $rec->getLName();
 	echo " ";
@@ -84,7 +84,7 @@ $rec = $uModel->getUser(212411640);
 	echo $rec->getAdmin();
 	echo " ";
 	echo $rec->getPassword();
-	echo "<br/>";
+	echo "<br/>";*/
 //}
 
 //$uModel->createUser("111001078","Smith","Joe","USA","Lighting","Joe.Smith@ge.com", "1st","1","0","password");
