@@ -20,9 +20,15 @@ defined("ROOT_PATH")
     or define("ROOT_PATH", $urls['root_path']);
 
 defined("TEMPLATES_PATH")
-    or define("TEMPLATES_PATH", $urls['root_path'] . $urls['res'] . '/templates');//issue with using root path, real path used to circumvent 
+    or define("TEMPLATES_PATH", $urls['root_path'] . $urls['res'] . '/templates');//sets template path within file directory
 
-defined("MODEL_PATH")
-    or define("MODEL_PATH", $urls['root_path'] . $urls['application'] . '/models');//issue with using root path, real path used to circumvent 
+defined("MODELS")
+    or define("MODELS", $urls['root_path'] . $urls['application'] . '/models');//sets models
+	
+defined("VIEWS")
+    or define("VIEWS", $urls['root_path'] . $urls['application'] . '/views');//sets views
+	
+defined("CONTROLLERS")
+    or define("CONTROLLERS", $urls['root_path'] . $urls['application'] . '/controllers');//sets views
 
 ?>
