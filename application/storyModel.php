@@ -146,5 +146,49 @@
 			$voteList = array($yesVotes, $totalVotes);
 			return $voteList;
 		}
+
+		// gets stories voted on, no matter the status
+		public function getStoriesVotedOn($sso) {
+			$result = $this->db->query("select * FROM vote WHERE SSO = '" . $sso . "'");
+			$storyIDs = mysqli_fetch_all($result['result']);
+			//echo count($storyIDs);
+			//echo "<br/>";
+			//get stories from storyIDs
+			$storyList = array();
+			foreach($storyIDs as $storyID) {
+				//echo $storyID[0];
+				//echo "<br/>";
+				$storyObj = $this->getStoryByID($storyID[0]);				
+				array_push($storyList, $storyObj);
+			}
+			return $storyList;
+		}
+
+		// gets pending stories not voted on
+		public function getStoriesNotVotedOn($sso) {
+			$resultVotedOn = $this->db->query("select * FROM vote WHERE SSO = '" . $sso . "'");
+			$storiesVoted = mysqli_fetch_all($resultVotedOn['result']);
+			$resultPending= $this->db->query("select * FROM story WHERE Status = 'pending'");
+			$storiesPending = mysqli_fetch_all($resultPending['result']);
+
+			$storyList = array();
+			foreach($storiesPending as $pendStory) {
+				$storyVoted = false;
+				foreach($storiesVoted as $votStory) {
+					//check if the voted story is the current pending story
+					if($votStory[0] == $pendStory[0]) {
+						$storyVoted = true;
+						break;
+					}
+				}
+				if (!$storyVoted) {
+					$storyObj = new Story($pendStory[0], $pendStory[1], $pendStory[2], $pendStory[3], $pendStory[4], $pendStory[5], $pendStory[6], 
+						$pendStory[7], $pendStory[8], $pendStory[9]); 
+					array_push($storyList, $storyObj);
+				}
+			}
+
+			return $storyList;
+		}
 	}
 ?>

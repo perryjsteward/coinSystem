@@ -47,14 +47,15 @@ echo "<br/>";*/
 //$rec = $sModel->getStoryByID(3);
 
 //test for creating vote
-$sModel->voteNo(1, "212414600");
+//$sModel->voteNo(1, "212414600");
 /*$voteList = $sModel->getVotes(1);
 echo "Yes Votes: " . $voteList[0];
 echo "<br/>";
 echo "Total Votes: " . $voteList[1];*/
+//$sModel->voteYes(1, "212414600");
 
-//$sList = $sModel->getStoriesByTargetSSO("212411640");
-/*foreach($sList as $rec) {
+$sList = $sModel->getStoriesNotVotedOn("212414600");
+foreach($sList as $rec) {
 echo $rec->getStoryID();
 	echo " ";
 	echo $rec->getSubSSO();
@@ -75,7 +76,7 @@ echo $rec->getStoryID();
 	echo " ";
 	echo $rec->getValue3();
 	echo "<br/>";
-}*/
+}
 
 	
 ?>
