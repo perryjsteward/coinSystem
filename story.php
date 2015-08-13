@@ -11,9 +11,13 @@ require_once(TEMPLATES_PATH.'/header.php');
 			/*
 				PHP View logic to determine view on stories
 			*/
-			if(isset($_GET['story']) || isset($_POST['receiverSso'])){
+			if(isset($_GET['story'])){
 				$controller = new StoryController();
 				$controller->invoke();
+			}
+			
+			if(isset($_POST['receivedSso'])){
+				echo 'test';
 			}
 		
 		?>  
