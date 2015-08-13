@@ -27,7 +27,7 @@ foreach($stories as $story){
 		</td>
 		<td>
 			<div class="media-body">
-				<h4 class="media-heading"><a href="story_index.php?story=single&id='.$story->getStoryID().'">Media heading</a></h4>
+				<h4 class="media-heading"><a href="story_index.php?story=single&id='.$story->getStoryID().'"> ' . $story->getTitle() . '</a></h4>
 				'.$string.'
 				</div>
 		</td>
