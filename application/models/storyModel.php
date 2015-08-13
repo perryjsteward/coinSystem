@@ -214,7 +214,7 @@
 			$storyList = array();
 			foreach($storiesPending as $pendStory) {
 				$storyVoted = false;
-				foreach($storiesVoted as $votStory) {
+					foreach($storiesVoted as $votStory) {
 					//check if the voted story is the current pending story
 					if($votStory[0] == $pendStory[0]) {
 						$storyVoted = true;
@@ -222,13 +222,11 @@
 					}
 				}
 				if (!$storyVoted) {
-					$storyObj = new Story($pendStory[0], $pendStory[1], $pendStory[2], $pendStory[3], $pendStory[4], $pendStory[5], $pendStory[6], 
-						$pendStory[7], $pendStory[8], $pendStory[9]); 
+					$storyObj = $this->getStoryByID($pendStory[0]); 
 					array_push($storyList, $storyObj);
-				}
-			}
-
+				}//end if
+			}//end for each
 			return $storyList;
-		}
+		}//end function
 	}
 ?>
