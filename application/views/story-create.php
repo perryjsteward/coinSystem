@@ -16,8 +16,8 @@
   </div>
   <div class="form-group">
     <label for="value1">First Value</label>
-    <select class="form-control" name="value1" >
-		<option>Select Value</option>
+    <select class="form-control" name="value1" required>
+		<option value="">Select Value</option>
 		<option>Integrity</option>
 		<option>Humility</option>
 		<option>Educator</option>
@@ -28,8 +28,8 @@
   </div>
   <div class="form-group">
     <label for="value2">Second Value</label>
-    <select class="form-control" required>
-		<option disabled="disabled">Select Value</option>
+    <select class="form-control" name="value2" required>
+		<option value="">Select Value</option>
 		<option>Integrity</option>
 		<option>Humility</option>
 		<option>Educator</option>
@@ -39,9 +39,9 @@
 	</select>
   </div>
   <div class="form-group">
-    <label for="value1">Third Value</label>
-    <select class="form-control" required>
-		<option selected="selected" disabled="disabled">Select Value</option>
+    <label for="value3">Third Value</label>
+    <select class="form-control" name="value3" required>
+		<option value="">Select Value</option>
 		<option>Integrity</option>
 		<option>Humility</option>
 		<option>Educator</option>
@@ -52,11 +52,11 @@
   </div>
   <div class="form-group">
 	<label for="story">Title</label>
-	<input type="input" class="form-control" id="title" value="Enter Title" required>
+	<input type="input" class="form-control" id="title" name="title" value="Enter Title" required>
 	</div>
   <div class="form-group">
 	<label for="story">Story</label>
-	<textarea class="form-control" id="story" rows="5" value="dede" required></textarea>
+	<textarea class="form-control" id="story" rows="5" name="story" required></textarea>
   </div>
 	<!-- Hidden inputs for database inputs, PHP used to enter values-->
 	<input type="hidden" class="form-control" id="giverSSo" value="">

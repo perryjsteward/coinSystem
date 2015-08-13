@@ -128,33 +128,20 @@
 		// Date in MM/DD/YYYY format because America
 		public function setApvDate($storyID, $date) {
 			$result = $this->db->query("UPDATE story SET ApvDate='" . $date . "' WHERE StoryID = " . $storyID . "");
-			if($result == 1) {
-				return true;
-			} else {
-				return false;
-			}
+			return $result;
 		}
 
 		// approves a story
 		public function setApproved($storyID) {
 			$result = $this->db->query("UPDATE story SET Status='approved' WHERE StoryID = " . $storyID . "");
-			//echo count()
-			if(count($result['result']) == 1) {
-				return true;
-			} else {
-				return false;
-			}
+			return $result;
 		}
 
 		// denies a story
 		public function setDenied($storyID) {
 			$result = $this->db->query("UPDATE story SET Status='denied' WHERE StoryID = " . $storyID . "");
 			//echo count()
-			if(count($result['result']) == 1) {
-				return true;
-			} else {
-				return false;
-			}
+			return $result;
 		}
 
 		// creates a story in the DB
@@ -162,11 +149,7 @@
 			$result = $this->db->query("INSERT INTO story (SubSSO, TargetSSO, Story, SubDate, Value_1, Value_2, Value_3, Title) VALUES('" . $subSSO . 
 				"','" . $targetSSO . "','" . $story . "','". $subDate . "','". $value1 . "','". $value2 . "','". $value3 . "','". $title . "')");
 			//echo count()
-			if(count($result['result']) == 1) {
-				return true;
-			} else {
-				return false;
-			}
+			return $result;
 		}
 
 		// votes yes on a story
@@ -184,12 +167,7 @@
 		public function vote($storyID, $sso, $vote) {
 			$result = $this->db->query("INSERT INTO vote VALUES(" . $storyID . 
 				",'" . $sso . "'," . $vote . ")");
-			//echo count()
-			if(count($result['result']) == 1) {
-				return true;
-			} else {
-				return false;
-			}
+			return $result;
 		}
 
 		//returns a two element array with the first element being number of yes votes, and second element being total votes
