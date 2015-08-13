@@ -4,4 +4,5 @@
 */
 
 include('storyController.php');
+include('userController.php');
 ?>

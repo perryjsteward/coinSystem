@@ -1,6 +1,6 @@
 <?php
 	include(ROOT_PATH . '/application/models/story.php');
-	include(ROOT_PATH . '/application/services/database.php');
+	include_once(ROOT_PATH . '/application/services/database.php');
 
 	class StoryModel {
 		private $db;

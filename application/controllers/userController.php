@@ -1,7 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/coinSystem/init.php');
-include(MODELS . "/userModel.php");
-//include_once(MODELS . "/model.php");
+include_once(MODELS . "/userModel.php");
+//include_once(MODELS . "/user.php");
 /*
 	user Controller handles the biz logic and invokes user models to obtain user objects to return to the presentation layer
 */
@@ -10,12 +10,13 @@ class userController {
 	public $model;
 	
 	//constructor initiates a new model object
-	public function __constructor(){
-		$this->model = new userModel();
+	public function __construct(){
+		$this->model = new UserModel();
 	}
 	
 	//invoke method for calling model class and obtaining user arrays
 	public function invoke(){	
+
 		//if statement to handle http request for user
 		if(isset($_GET['user'])){
 			switch($_GET['user']){ //switch on user value
@@ -36,26 +37,32 @@ class userController {
 			
 	} //end invoke
 	
-	private function login($SSO, $Password){
-		$User = $this->model->getUser($SSO);
+	public function login($SSO, $Password){
+		$user = $this->model->getUser($SSO);
 		
-		if($Password == User->getPassword){
-			Return true; 
-		}else{
-			Return false;
-		}	
+		if($user != false){
+			if($Password == $user->getPassword()){
+				//set session variables
+				$_SESSION['sso']=$user->getSSO();
+				return true; 
+			}else{
+				return false;
+			}	
+		} else {
+			return false;
+		}
 	}
 	
 	
 	private function username($SSO){
 		$User = $this->model->getUser($SSO);
 		
-		$Username = User->getFName.User->LName;
+		//$Username = $User->getFName.User->LName();
 
 	}
 	
 		
-	}
+	
 }
 
 ?>
