@@ -29,6 +29,10 @@ class StoryController {
 				case 'create'://show specific requested story object
 					include(VIEWS . '/story-create.php');
 					break;
+				case 'account'://show user page
+					$pendStories = $this->model->getStoriesNotVotedOn("212414600");
+					include('./account.php');
+					break;
 			}//end switch	
 		} //end if story
 		

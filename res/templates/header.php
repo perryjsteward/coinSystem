@@ -66,7 +66,7 @@ $page = $path_parts['filename'];
 				  &nbsp;John Smith <span class="caret"></span></a>
 				  <ul class="dropdown-menu">
 					<li class="dropdown-header">Notifications</li>
-					<li><a href="account.php">actions pending &nbsp;<span class="badge">4</span></a></li>
+					<li><a href="./account_index.php?account=notifications">actions pending &nbsp;<span class="badge">4</span></a></li>
 					<li role="separator" class="divider"></li>
 					<li><a href="#">Account</a></li>
 					<li><a href="#">Submissions</a></li>
