@@ -33,8 +33,29 @@ class StoryController {
 		} //end if story
 		
 		if(isset($_POST['receiverSso'])){
-			
-			$this->model->createStory('212335809', $_POST['receiverSso'], $_POST['story'], SubDate, $_POST['title'], $_POST['value1'], $_POST['value2'], $_POST['value3']);
+			$result = $this->model->createStory('212335809', $_POST['receiverSso'], $_POST['story'], date('m/d/y'), $_POST['value1'], $_POST['value2'], $_POST['value3'], $_POST['title']);
+			if($result['error'] == false){
+				$message = 'Your Story has been submitted successfully, please wait for the board to review your submission.';
+			} else {
+				$message = 'Sorry Something went wrong with you submission. Please speak to a system admin.';
+			}
+			echo '<br/>';
+			switch($result['error']){
+					case true:
+						echo '<div class="alert alert-warning alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							'.$message.'
+							</div>';
+						break;
+					case false:
+						echo '<div class="alert alert-success alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							'.$message.'
+							</div>';
+						break;
+				}
+			$stories = $this->model->getApvStories();//parse to array $stories
+			include(VIEWS . '/story-list.php');
 		}
 			
 	} //end invoke
