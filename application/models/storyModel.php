@@ -20,18 +20,17 @@
 
 			$storyList = array();
 			foreach($stories as $story) {
-				$resultUsers = $this->db->query("select * FROM personal WHERE SSO = '" . $story[1] . "'");
-				$users = mysqli_fetch_all($resultUsers['result']);
-				$user = $users[0];
-				$sName = $user[2] . $user[1];
+				$resultUsersSub = $this->db->query("select * FROM personal WHERE SSO = '" . $story[1] . "'");
+				$usersSub = mysqli_fetch_all($resultUsersSub['result']);
+				$userSub = $usersSub[0];
+				$sName = $userSub[2] . " " . $userSub[1];
 
 				$resultUsers = $this->db->query("select * FROM personal WHERE SSO = '" . $story[2] . "'");
 				$users = mysqli_fetch_all($resultUsers['result']);
 				$user = $users[0];
-				$tName = $user[2] . $user[1];
+				$tName = $user[2] . " " . $user[1];
 
-				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9], 
-					$story[10], $tName, $sName); 
+				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9], $story[10], $tName, $sName); 
 				array_push($storyList, $storyObj);
 			}
 			return $storyList;
@@ -44,7 +43,17 @@
 
 			$storyList = array();
 			foreach($stories as $story) {
-				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9]); 
+				$resultUsersSub = $this->db->query("select * FROM personal WHERE SSO = '" . $story[1] . "'");
+				$usersSub = mysqli_fetch_all($resultUsersSub['result']);
+				$userSub = $usersSub[0];
+				$sName = $userSub[2] . " " . $userSub[1];
+
+				$resultUsers = $this->db->query("select * FROM personal WHERE SSO = '" . $story[2] . "'");
+				$users = mysqli_fetch_all($resultUsers['result']);
+				$user = $users[0];
+				$tName = $user[2] . " " . $user[1];
+
+				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9], $story[10], $tName, $sName); 
 				array_push($storyList, $storyObj);
 			}
 			return $storyList;
@@ -56,7 +65,17 @@
 
 			$storyList = array();
 			foreach($stories as $story) {
-				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9]); 
+				$resultUsersSub = $this->db->query("select * FROM personal WHERE SSO = '" . $story[1] . "'");
+				$usersSub = mysqli_fetch_all($resultUsersSub['result']);
+				$userSub = $usersSub[0];
+				$sName = $userSub[2] . " " . $userSub[1];
+
+				$resultUsers = $this->db->query("select * FROM personal WHERE SSO = '" . $story[2] . "'");
+				$users = mysqli_fetch_all($resultUsers['result']);
+				$user = $users[0];
+				$tName = $user[2] . " " . $user[1];
+
+				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9], $story[10], $tName, $sName); 
 				array_push($storyList, $storyObj);
 			}
 			return $storyList;
@@ -70,7 +89,17 @@
 			$stories = mysqli_fetch_all($result['result']);
 			$story = $stories[0];
 			
-			$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9]); 
+			$resultUsersSub = $this->db->query("select * FROM personal WHERE SSO = '" . $story[1] . "'");
+			$usersSub = mysqli_fetch_all($resultUsersSub['result']);
+			$userSub = $usersSub[0];
+			$sName = $userSub[2] . " " . $userSub[1];
+
+			$resultUsers = $this->db->query("select * FROM personal WHERE SSO = '" . $story[2] . "'");
+			$users = mysqli_fetch_all($resultUsers['result']);
+			$user = $users[0];
+			$tName = $user[2] . " " . $user[1];
+
+			$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9], $story[10], $tName, $sName); 
 				
 			return $storyObj;
 		}
@@ -108,9 +137,9 @@
 		}
 
 		// creates a story in the DB
-		public function createStory($subSSO, $targetSSO, $story, $subDate, $value1, $value2, $value3) {
-			$result = $this->db->query("INSERT INTO story (SubSSO, TargetSSO, Story, SubDate, Value_1, Value_2, Value_3) VALUES('" . $subSSO . 
-				"','" . $targetSSO . "','" . $story . "','". $subDate . "','". $value1 . "','". $value2 . "','". $value3 . "')");
+		public function createStory($subSSO, $targetSSO, $story, $subDate, $value1, $value2, $value3, $title) {
+			$result = $this->db->query("INSERT INTO story (SubSSO, TargetSSO, Story, SubDate, Value_1, Value_2, Value_3, Title) VALUES('" . $subSSO . 
+				"','" . $targetSSO . "','" . $story . "','". $subDate . "','". $value1 . "','". $value2 . "','". $value3 . "','". $title . "')");
 			//echo count()
 			if(count($result['result']) == 1) {
 				return true;

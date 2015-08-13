@@ -54,7 +54,7 @@ echo "<br/>";
 echo "Total Votes: " . $voteList[1];*/
 //$sModel->voteYes(1, "212414600");
 
-$sList = $sModel->getStoryList();
+$sList = $sModel->getStoriesBySubSSO("212414600");
 foreach($sList as $rec) {
 	echo $rec->getTitle();
 	echo " ";
