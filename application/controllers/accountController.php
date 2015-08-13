@@ -40,8 +40,6 @@ class AccountController {
 					include('./account.php');
 					break;
 			}//end switch	
-		} //end if story
-		}
-			
+		} //end if story					
 	} //end invoke
 }

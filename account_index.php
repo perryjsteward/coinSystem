@@ -24,6 +24,7 @@ require_once(TEMPLATES_PATH.'/header.php');
 				PHP View logic to determine view on stories
 			*/
 			if(isset($_GET['account'])){
+				var_dump(file_exists("init.php"));
 				$controller = new AccountController();
 				$controller->invoke();
 			}
