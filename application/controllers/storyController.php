@@ -31,6 +31,11 @@ class StoryController {
 					break;
 			}//end switch
 		} //end if story
+		
+		//if create form submission posts
+		if(isset($_POST['receiverSso'])){
+			echo 'test';
+		}
 			
 	} //end invoke
 	
