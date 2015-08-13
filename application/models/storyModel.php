@@ -12,10 +12,30 @@
 
 		// returns an array of story objects
 		public function getStoryList() {
-			//$db = new Database();
-			//$db->connect();
-			//global $db;
 			$result = $this->db->query('select * FROM story');
+			$stories = mysqli_fetch_all($result['result']);
+
+			$storyList = array();
+			foreach($stories as $story) {
+				$resultUsersSub = $this->db->query("select * FROM personal WHERE SSO = '" . $story[1] . "'");
+				$usersSub = mysqli_fetch_all($resultUsersSub['result']);
+				$userSub = $usersSub[0];
+				$sName = $userSub[2] . " " . $userSub[1];
+
+				$resultUsers = $this->db->query("select * FROM personal WHERE SSO = '" . $story[2] . "'");
+				$users = mysqli_fetch_all($resultUsers['result']);
+				$user = $users[0];
+				$tName = $user[2] . " " . $user[1];
+
+				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9], $story[10], $tName, $sName); 
+				array_push($storyList, $storyObj);
+			}
+			return $storyList;
+		}
+
+		// returns approved stories
+		public function getApvStories() {
+			$result = $this->db->query("select * FROM story WHERE Status = 'approved'");
 			$stories = mysqli_fetch_all($result['result']);
 
 			$storyList = array();
