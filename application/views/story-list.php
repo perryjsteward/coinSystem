@@ -1,11 +1,4 @@
-<div class="page-header">
-	<h1>The ITLP Stories
-	<a class="btn btn-success btn-lg pull-right" href="story_index.php?story=create" role="button">Submit Story</a>
-	</h1>
-</div>
-<p class="lead">Below are all the stories behind the ITLP coin awards. Discover which ITLP's achieved and displayed the ITLP values. Cras sit amet nibh libero, in gravida nulla</p>
 <table class="table table-hover" style="margin-top: 50px; margin-bottom: 0px;">	<tbody>
-
 <?php
 foreach($stories as $story){
 
@@ -30,8 +23,15 @@ foreach($stories as $story){
 				<h4 class="media-heading"><a href="story_index.php?story=single&id='.$story->getStoryID().'"> ' . $story->getTitle() . '</a></h4>
 				'.$string.'
 				</div>
-		</td>
-	</tr>';
+		</td>';
+	if(isset($_GET['account'])){
+		switch($_GET['account']){
+			case 'submissions':
+				
+				break;
+		}
+	}	
+	echo '</tr>';
 }
 
 ?>

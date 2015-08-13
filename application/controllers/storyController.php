@@ -20,6 +20,14 @@ class StoryController {
 			switch($_GET['story']){ //switch on story value
 				case 'list': //if requesting list return array of story objects
 					$stories = $this->model->getApvStories();//parse to array $stories
+					echo '<div class="page-header">
+							<h1>The ITLP Stories
+							<a class="btn btn-success btn-lg pull-right" href="story_index.php?story=create" role="button">Submit Story</a>
+							</h1>
+						</div>
+						<p class="lead">Below are all the stories behind the ITLP coin awards. Discover which ITLPs achieved and displayed the ITLP values. Cras sit amet nibh libero, in gravida nulla</p>
+						
+						';
 					include(VIEWS . '/story-list.php');
 					break;
 				case 'single'://show specific requested story object
@@ -50,8 +58,7 @@ class StoryController {
 					case false:
 						echo '<div class="alert alert-success alert-dismissible" role="alert">
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							'.$message.'<br />'.var_dump($result).'
-							</div>';
+							'.$message.'<br /></div>';
 						break;
 				}
 			$stories = $this->model->getApvStories();//parse to array $stories

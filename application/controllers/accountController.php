@@ -26,8 +26,8 @@ class AccountController {
 					include(VIEWS . '/account-notifications');
 					break;
 				case 'submissions'://show specific requested story object
-					$story = $this->model->getStoryByID($_GET['id']);
-					include(VIEWS . '/story-view.php');
+					$stories = $this->model->getStoriesBySubSSO($_SESSION['sso']);
+					include(VIEWS . '/story-list.php');
 					break;
 				case 'recieved'://show specific requested story object
 					include(VIEWS . '/story-create.php');
