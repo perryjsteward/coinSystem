@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h1>Story Header</h1>
+	<h1><?php echo $story->getTitle(); ?></h1>
 </div>
 <div class="row">
 	<div class="col-md-2">
@@ -23,11 +23,11 @@ $value_colour = array (
 );
 
 echo '
-	Nominated: <a href="">'.$story->getTargetSSO().'</a> 
+	Nominated: <a href="">'.$story->getTargetName().'</a> 
 		<br />
 		Awarded on: '.$story->getApvDate().'
 		<br />
-		Given by: <a href="">'.$story->getSubSSO().'</a> 
+		Given by: <a href="">'.$story->getSubName().'</a> 
 		</p>
 		<p>	
 		<a class="btn btn-'.$value_colour[$values[0]].' btn-md" href="#integrity" role="button">'.$values[0].'</a>
@@ -36,11 +36,7 @@ echo '
 		</p><br />
 	</div>
 </div>
-<p>
-Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-</p>';
+<p>'.$story->getStory().'</p>';
 
 
 ?>

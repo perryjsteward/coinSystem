@@ -1,6 +1,6 @@
 <div class="page-header">
 	<h1>The ITLP Stories
-	<a class="btn btn-success btn-lg pull-right" href="story.php?story=create" role="button">Submit Story</a>
+	<a class="btn btn-success btn-lg pull-right" href="story_index.php?story=create" role="button">Submit Story</a>
 	</h1>
 </div>
 <p class="lead">Below are all the stories behind the ITLP coin awards. Discover which ITLP's achieved and displayed the ITLP values. Cras sit amet nibh libero, in gravida nulla</p>
@@ -12,7 +12,7 @@ foreach($stories as $story){
 	$string = strip_tags($story->getStory()); //stripping any html
 	if (strlen($string) > 300) {
 		// truncate string
-		$string = substr($string, 0, 300) . '... <a href="story.php?story=single&id='.$story->getStoryID().'">Read More</a>';
+		$string = substr($string, 0, 300) . '... <a href="story_index.php?story=single&id='.$story->getStoryID().'">Read More</a>';
 	} else {
 		$string = strip_tags($story->getStory());
 	}
@@ -27,7 +27,7 @@ foreach($stories as $story){
 		</td>
 		<td>
 			<div class="media-body">
-				<h4 class="media-heading"><a href="story.php?story=single&id='.$story->getStoryID().'">Media heading</a></h4>
+				<h4 class="media-heading"><a href="story_index.php?story=single&id='.$story->getStoryID().'">Media heading</a></h4>
 				'.$string.'
 				</div>
 		</td>

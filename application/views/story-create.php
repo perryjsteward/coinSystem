@@ -9,14 +9,14 @@
 <div class="page-header">
 	<h1>The ITLP Stories</h1>
 </div>
-<form action="<?php echo  $_SERVER['PHP_SELF']; ?>" method="POST">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   <div class="form-group">
     <label for="receiverSso">Receiver SSO</label>
-    <input type="number" class="form-control" id="receiverSso" value="22" required>
+    <input type="number" class="form-control" name="receiverSso" value="22" required>
   </div>
   <div class="form-group">
     <label for="value1">First Value</label>
-    <select class="form-control" >
+    <select class="form-control" name="value1" >
 		<option>Select Value</option>
 		<option>Integrity</option>
 		<option>Humility</option>

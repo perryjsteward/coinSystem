@@ -53,7 +53,7 @@ $page = $path_parts['filename'];
               <ul class="nav navbar-nav">
                 <li <?php if($page == 'index'){echo 'class="active"'; }?>><a href="index.php">Home</a></li>
                 <li <?php if($page == 'about'){echo 'class="active"'; }?>><a href="about.php">About the Values</a></li>
-                <li <?php if($page == 'story'){echo 'class="active"'; }?>><a href="story.php?story=list">Story Submissions</a></li>
+                <li <?php if($page == 'story'){echo 'class="active"'; }?>><a href="story_index.php?story=list">Story Submissions</a></li>
                </ul>
                 </li>
               </ul>

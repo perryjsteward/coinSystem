@@ -19,7 +19,7 @@ class StoryController {
 		if(isset($_GET['story'])){
 			switch($_GET['story']){ //switch on story value
 				case 'list': //if requesting list return array of story objects
-					$stories = $this->model->getApprovedList();//parse to array $stories
+					$stories = $this->model->getApvStories();//parse to array $stories
 					include(VIEWS . '/story-list.php');
 					break;
 				case 'single'://show specific requested story object
@@ -29,12 +29,12 @@ class StoryController {
 				case 'create'://show specific requested story object
 					include(VIEWS . '/story-create.php');
 					break;
-			}//end switch
+			}//end switch	
 		} //end if story
 		
-		//if create form submission posts
 		if(isset($_POST['receiverSso'])){
-			echo 'test';
+			
+			$this->model->createStory('212335809', $_POST['receiverSso'], $_POST['story'], SubDate, $_POST['title'], $_POST['value1'], $_POST['value2'], $_POST['value3']);
 		}
 			
 	} //end invoke
