@@ -42,6 +42,8 @@ class userController {
 		
 		if($user != false){
 			if($Password == $user->getPassword()){
+				//set session variables
+				$_SESSION['sso']=$user->getSSO();
 				return true; 
 			}else{
 				return false;

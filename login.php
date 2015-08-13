@@ -1,12 +1,11 @@
 <?php
 include('init.php');
-$result = '';
+
 if(isset($_POST['sso'])){
 	$controller = new userController();
 	$result = $controller->login($_POST['sso'], $_POST['password']);	
-	
+
 	if($result == true){
-		//set session variables
 		header('location: index.php');
 	}
 	if($result == false){
@@ -16,7 +15,6 @@ if(isset($_POST['sso'])){
 								</div>';
 		}
 }
-
 
 ?>
 

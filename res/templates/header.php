@@ -2,7 +2,7 @@
 $path_parts = pathinfo($_SERVER['PHP_SELF']);
 $page = $path_parts['filename'];
 
-if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['sso'])){
 	header('location: login.php');
 }
 ?>
