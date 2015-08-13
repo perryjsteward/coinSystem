@@ -27,6 +27,7 @@
 				$user = $users[0];
 				$tName = $user[2] . " " . $user[1];
 
+				//test
 				$storyObj = new Story($story[0], $story[1], $story[2], $story[3], $story[4], $story[5], $story[6], $story[7], $story[8], $story[9], $story[10], $tName, $sName); 
 				array_push($storyList, $storyObj);
 			}
