@@ -12,7 +12,7 @@ require_once(TEMPLATES_PATH.'/header.php');
 	
 		<ul class="nav nav-tabs" style="margin-top:25px;">
 			<li role="presentation"<?php if($_GET['account'] == 'notifications'){echo 'class="active"'; }?><a href="./account_index.php?account=notifications">Notifications <span class="badge">4</span>&nbsp;</a></li>
-			<li role="presentation"<?php if($_GET['account'] == 'submissions'){echo 'class="active"'; }?>><a href="account.php?account=submissions">Submissions</a></li>
+			<li role="presentation"<?php if($_GET['account'] == 'submissions'){echo 'class="active"'; }?>><a href="account_index.php?account=submissions">Submissions</a></li>
 			<li role="presentation"<?php if($_GET['account'] == 'received'){echo 'class="active"'; }?>><a href="#">Received</a></li>
 			<li role="presentation"<?php if($_GET['account'] == 'reviewed'){echo 'class="active"'; }?>><a href="#">Reviewed</a></li>
 			<li role="presentation"<?php if($_GET['account'] == 'account'){echo 'class="active"'; }?>><a href="#">Account</a></li>
