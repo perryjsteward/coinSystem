@@ -12,7 +12,7 @@
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   <div class="form-group">
     <label for="receiverSso">Receiver SSO</label>
-    <input type="number" class="form-control" name="receiverSso" value="22" required>
+    <input type="number" class="form-control" name="receiverSso" value="" required>
   </div>
   <div class="form-group">
     <label for="value1">First Value</label>
