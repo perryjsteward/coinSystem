@@ -7,16 +7,32 @@
 	</div>
 	<div class="col-md-10">
 		<p class="lead">
-		Nominated: <a href=''>Pat Butler</a> 
+<?php
+$values = array (
+	'0' => $story->getValue1(),
+	'1' => $story->getValue2(),
+	'2' => $story->getValue3()
+);
+$value_colour = array (
+	'Integrity' => 'default',
+	'Humility' => 'primary',
+	'Passion' => 'info',
+	'Stewardship' => 'warning',
+	'Educator' => 'success',
+	'Customer Focus' => 'danger'
+);
+
+echo '
+	Nominated: <a href="">'.$story->getTargetSSO().'</a> 
 		<br />
-		Awarded on: 11th August 2015
+		Awarded on: '.$story->getApvDate().'
 		<br />
-		Given by: <a href=''>Darrell Thobe</a> 
+		Given by: <a href="">'.$story->getSubSSO().'</a> 
 		</p>
-		<p>
-		<a class="btn btn-default btn-md" href="#integrity" role="button">Integrity</a>
-		<a class="btn btn-primary btn-md" href="#integrity" role="button">Humility</a>
-		<a class="btn btn-danger btn-md" href="#integrity" role="button">Customer Focus</a>
+		<p>	
+		<a class="btn btn-'.$value_colour[$values[0]].' btn-md" href="#integrity" role="button">'.$values[0].'</a>
+		<a class="btn btn-'.$value_colour[$values[1]].' btn-md" href="#integrity" role="button">'.$values[1].'</a>
+		<a class="btn btn-'.$value_colour[$values[2]].' btn-md" href="#integrity" role="button">'.$values[2].'</a>	
 		</p><br />
 	</div>
 </div>
@@ -24,15 +40,7 @@
 Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
 Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
 Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-</p>
-<p>
-Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-</p>
-<p>
-Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-</p>
-<br />
+</p>';
+
+
+?>

@@ -19,11 +19,11 @@ class StoryController {
 		if(isset($_GET['story'])){
 			switch($_GET['story']){ //switch on story value
 				case 'list': //if requesting list return array of story objects
-					$stories = $this->model->getStoryList();//parse to array $stories
+					$stories = $this->model->getApprovedList();//parse to array $stories
 					include(VIEWS . '/story-list.php');
 					break;
 				case 'single'://show specific requested story object
-					$story = $this->model->getStory($_GET['book']);
+					$story = $this->model->getStoryByID($_GET['id']);
 					include(VIEWS . '/story-view.php');
 					break;
 				case 'create'://show specific requested story object
