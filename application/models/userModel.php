@@ -1,6 +1,6 @@
 <?php
-	include(MODELS . '/user.php');
-	include_once(ROOT_PATH . '/application/services/database.php');
+	//include(MODELS . '/user.php');
+	//include_once(ROOT_PATH . '/application/services/database.php');
 
 	class UserModel {
 		private $db;

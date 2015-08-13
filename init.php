@@ -33,5 +33,8 @@ defined("CONTROLLERS")
     or define("CONTROLLERS", $urls['root_path'] . $urls['application'] . '/controllers');//sets controllers
 
 //includes 
+include_once(ROOT_PATH . '/application/services/database.php');
 include_once(CONTROLLERS .'/controllers.php'); //include controller registry
+include_once(MODELS .'/models.php');
+
 ?>
