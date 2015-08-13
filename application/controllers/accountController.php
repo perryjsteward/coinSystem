@@ -1,10 +1,11 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/coinSystem/init.php');
 include_once(MODELS . "/storyModel.php");
+include_once(MODELS . "/userModel.php");
 /*
 	Account controller handles logic for the account page
 */
-class AccountController {
+class ac {
 	
 	public $model;
 	public $userModel;
@@ -15,7 +16,7 @@ class AccountController {
 		$this->userModel = new userModel();
 	}
 	
-	//invoke method for calling model class and obtaining story arrays
+	/*//invoke method for calling model class and obtaining story arrays
 	public function invoke(){	
 		//if statement to handle http request for STORY
 		if(isset($_GET['account'])){
@@ -41,5 +42,5 @@ class AccountController {
 					break;
 			}//end switch	
 		} //end if story					
-	} //end invoke
+	} //end invoke*/
 }
