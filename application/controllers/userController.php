@@ -1,6 +1,6 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/coinSystem/init.php');
-include_once(MODELS . "/userModel.php");
+//include_once(MODELS . "/userModel.php");
 //include_once(MODELS . "/user.php");
 /*
 	user Controller handles the biz logic and invokes user models to obtain user objects to return to the presentation layer

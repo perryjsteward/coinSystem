@@ -1,6 +1,6 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/coinSystem/init.php');
-include_once(MODELS . "/storyModel.php");
+//include_once(MODELS . "/storyModel.php");
 /*
 	Story Controller handles the biz logic and invokes story models to obtain story objects to return to the presentation layer
 */
