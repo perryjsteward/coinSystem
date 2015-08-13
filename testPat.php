@@ -36,7 +36,7 @@ include(ROOT_PATH . '/application/models/storyModel.php');
 
 $sModel = new StoryModel();
 //$sModel->setApvDate(1, "08/12/2015");
-//$sModel->createStory("212414600", "200020088", "A gift to my plus 1", "08/13/2015", "Integrity", "Passion", "Humility");
+$sModel->createStory("212414600", "200020088", "A gift to my plus 1", "08/13/2015", "Integrity", "Passion", "Humility");
 //$success = $sModel->setStatus(1, "Approved");
 /*if($success) {
 	echo "Status Update Successful";
@@ -54,7 +54,7 @@ echo "<br/>";
 echo "Total Votes: " . $voteList[1];*/
 //$sModel->voteYes(1, "212414600");
 
-$sList = $sModel->getStoriesBySubSSO("212414600");
+/*$sList = $sModel->getStoriesBySubSSO("212414600");
 foreach($sList as $rec) {
 	echo $rec->getTitle();
 	echo " ";
@@ -83,7 +83,7 @@ foreach($sList as $rec) {
 	echo $rec->getValue3();
 	echo " ";
 	
-	echo "<br/>";
+	echo "<br/>";*/
 }
 
 	
