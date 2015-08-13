@@ -222,8 +222,7 @@
 					}
 				}
 				if (!$storyVoted) {
-					$storyObj = new Story($pendStory[0], $pendStory[1], $pendStory[2], $pendStory[3], $pendStory[4], $pendStory[5], $pendStory[6], 
-						$pendStory[7], $pendStory[8], $pendStory[9]); 
+					$storyObj = $this->getStoryByID($pendStory[0]); 
 					array_push($storyList, $storyObj);
 				}
 			}

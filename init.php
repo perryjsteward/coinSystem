@@ -33,5 +33,8 @@ defined("CONTROLLERS")
     or define("CONTROLLERS", $urls['root_path'] . $urls['application'] . '/controllers');//sets controllers
 
 //includes 
-include_once(CONTROLLERS .'/controllers.php'); //include controller registry
+//include_once(CONTROLLERS .'/controllers.php'); //include controller registry
+  include_once('./application/controllers/accountController.php');
+  include_once('./application/controllers/userController.php');
+  include_once('./application/controllers/storyController.php');
 ?>

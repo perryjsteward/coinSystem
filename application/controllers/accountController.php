@@ -1,6 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/coinSystem/init.php');
 include_once(MODELS . "/storyModel.php");
+include_once(MODELS . "/userModel.php");
 /*
 	Account controller handles logic for the account page
 */
@@ -21,8 +22,8 @@ class AccountController {
 		if(isset($_GET['account'])){
 			switch($_GET['account']){ //switch on story value
 				case 'notifications': //if requesting list return array of story objects
-					$pendStories = $this->model->getStoriesNotVotedOn();//parse to array $stories
-					include(VIEWS . '/account-notifications');
+					$pendStories = $this->model->getStoriesNotVotedOn($_SESSION['sso']);//parse to array $stories
+					include(VIEWS . '/account-notifications.php');
 					break;
 				case 'submissions'://show specific requested story object
 					$story = $this->model->getStoryByID($_GET['id']);
@@ -41,7 +42,7 @@ class AccountController {
 					break;
 			}//end switch	
 		} //end if story
-		}
+		
 			
 	} //end invoke
 }

@@ -31,7 +31,7 @@ foreach($array as $rec) {
 //var_dump($array);*/
 
 include('init.php');
-include(ROOT_PATH . '/application/models/storyModel.php');
+//include(ROOT_PATH . '/application/models/storyModel.php');
 //include(ROOT_PATH . '/application/userModel.php');
 
 $sModel = new StoryModel();
@@ -54,7 +54,7 @@ echo "<br/>";
 echo "Total Votes: " . $voteList[1];*/
 //$sModel->voteYes(1, "212414600");
 
-$sList = $sModel->getStoriesBySubSSO("212414600");
+$sList = $sModel->getStoriesNotVotedOn("212414600");
 foreach($sList as $rec) {
 	echo $rec->getTitle();
 	echo " ";
