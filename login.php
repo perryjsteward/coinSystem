@@ -1,6 +1,10 @@
 <?php
 include('init.php');
 
+if(isset($_GET['logout'])){
+	
+}
+
 if(isset($_POST['sso'])){
 	$controller = new userController();
 	$result = $controller->login($_POST['sso'], $_POST['password']);	

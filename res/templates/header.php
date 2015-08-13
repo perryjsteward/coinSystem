@@ -75,6 +75,8 @@ if(!isset($_SESSION['sso'])){
 					<li><a href="#">Submissions</a></li>
 					<li><a href="#">Received</a></li>
 					<li><a href="#">Reviews</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="login.php?logout=1">Log out</a></li>
 				  </ul>
 				</li>
 				
