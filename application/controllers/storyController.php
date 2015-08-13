@@ -1,6 +1,6 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/coinSystem/init.php');
-include_once(MODELS . "/storyModel.php");
+//include_once(MODELS . "/storyModel.php");
 /*
 	Story Controller handles the biz logic and invokes story models to obtain story objects to return to the presentation layer
 */
@@ -34,8 +34,46 @@ class StoryController {
 			
 	} //end invoke
 	
-	
-	
-}
+	private function tallyVotes($storyID) {
+		$votes = $this->model->getVotes($storyID);
+		$nos = $votes[1] - $votes[0];
 
-?>
+		if($votes[0] >= 4) {
+			return "approved";
+		} else if ($nos >= 4) {
+			return "denied";
+		} else {
+			return "pending";
+		}
+	}
+	
+	private function tallyVotesOnDead($storyID) {
+		$votes = $this->model->getVotes($storyID);
+		$nos = $votes[1] - $votes[0];
+
+		if($votes[0] >= $nos) {
+			return "approved";
+		} else {
+			return "denied";
+		}
+	}
+
+	private function voteYes($storyID, $SSO) {
+		$this->$model->voteYes($storyID, $SSO);
+		$this->tallyVotes($storyID);
+	}
+
+	private function voteNo($storyID, $SSO) {
+		$this->$model->voteNo($storyID, $SSO);
+		$this->tallyVotes($storyID);
+	}
+
+	private function allowedToVote($storyID, $SSO) {
+		$story = $this->model->getStoryByID($storyID);
+		if ($SSO == $story->getSubSSO) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+}
